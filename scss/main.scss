@@ -105,13 +105,13 @@ h2, p{
         font-weight: map-get($font-weights, "extra-bold" );
     }
 }
-ul{
+.footer ul{
     list-style: none;
     margin-left: -20%;
 }
-ul li{
+.footer ul li{
     margin-bottom: 10%;
 }
-ul li a{
+.footer ul li a{
     color: $white;
 }

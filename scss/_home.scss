@@ -32,6 +32,7 @@
     margin: 0 3% 0 3%;
     }
         &__btn{
+            @include flexCenter(row);
             @include defaultBtns;
             color: $white;
             padding: 14px;
@@ -41,19 +42,59 @@
             font-weight: map-get($font-weights, "extra-bold" );
             cursor:pointer;
         }
+        &__btn i{
+            margin-left: 7%;
+        }
         &__btn:hover{
             text-decoration: underline;
         }
             &__content{
                 @include flexCenter(column);
                 position: absolute;
-                width: 8%;
-                height: 30%;
-                padding: 10%;
+                width: 90px;
+                height: 100px;
                 background-color: $white;
-                margin-top: 10%;
-                margin-left: 30%;
+                margin-top: 25%;
+                margin-left: -55%;
                 margin-right: 30%;
+                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+                border: 1px solid red;
+            }
+            &__content2{
+                @include flexCenter(column);
+                position: absolute;
+                width: 90px;
+                height: 100px;
+                background-color: $white;
+                margin-top: 25%;
+                margin-left: 15%;
+                margin-right: 30%;
+                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+                border: 1px solid green;
+            }
+            &__content3{
+                @include flexCenter(column);
+                position: absolute;
+                width: 90px;
+                height: 100px;
+                background-color: $white;
+                margin-top: 25%;
+                margin-left: 35%;
+                margin-right: 30%;
+                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+                border: 1px solid blue;
+            }
+            &__content ul li {
+                color: $dark-gray;
+                list-style: none;
+            }
+            &__content2 ul li {
+                color: $dark-gray;
+                list-style: none;
+            }
+            &__content3 ul li {
+                color: $dark-gray;
+                list-style: none;
             }
 }
 .signin{
@@ -102,27 +143,26 @@ h1{
     @include flexCenter(row);
     margin-top: 2%;
     width: 30%;
-    border: 1px solid red;
-    &__btn{
-        @include defaultBtns;
-        width: 100px;
-        height: 35px;
-        margin-right: 4%;
-        cursor: pointer;
-        border-radius: 35px;
-        border: none;
-        font-family: $Ubuntu;
-        font-weight: map-get($font-weights, "extra-bold" );
-    }
-    &__btn:nth-child(1){
-        background-color: $white !important;
-        color: $light-red;
-    }
-    &__btn:nth-child(2){
-        background-color: none;
-        color: $white;
-        border: 1px solid $white;
-    }
+        &__btn{
+            @include defaultBtns;
+            width: 100px;
+            height: 35px;
+            margin-right: 4%;
+            cursor: pointer;
+            border-radius: 35px;
+            border: none;
+            font-family: $Ubuntu;
+            font-weight: map-get($font-weights, "extra-bold" );
+        }
+        &__btn:nth-child(1){
+            background-color: $white !important;
+            color: $light-red;
+        }
+        &__btn:nth-child(2){
+            background-color: none;
+            color: $white;
+            border: 1px solid $white;
+        }
         &__btn:nth-child(1):hover{
             background-color: $hover-light-red !important;
             color: $white;
