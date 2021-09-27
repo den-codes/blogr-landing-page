@@ -1,0 +1,81 @@
+@media screen and (max-width: 785px) {
+    .home{
+        @include flexCenter(row);
+        max-width: 100vw;
+        height: 70vh;
+        position:relative;
+        background-image: url('/images/bg-pattern-intro.svg');
+        background-position: 80% 20%;
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background: linear-gradient(
+            to right, 
+            rgba($first-red, 0.9),
+            rgba($light-red, 0.9)
+        );
+        border-bottom-left-radius: 60px;
+        &__nav{
+            position: absolute;
+            margin-bottom: 46%;
+        }
+    &__logo{
+        position: absolute;
+        margin-left: -55%;
+    }
+    
+}
+.dropdown{
+    display:none;
+}
+hgroup{
+    position: absolute;
+    text-align: center;
+    display: flex;
+    justify-content:center;
+    margin-left: 10%;
+    margin-right:10%;
+}
+hgroup h1{
+    font-size: 2em;
+}
+hgroup h5{
+    font-weight: map-get($font-weights, "light" );
+    font-size: 1em;
+}
+.info{
+    @include flexCenter(row);
+    position:absolute;
+    margin: 70% 5% 0 5%;
+    &__btn{
+        max-width: 100%;
+        height: 100%;
+        font-size: 1em;
+    }
+}
+.main{
+    margin-top: 18%;
+    margin-bottom: 20%;
+    background-position: 150% 1%  !important; 
+    background-size: 90% !important;
+    height: 900px;
+
+    &__title{
+        font-size: 1.5em;
+        margin-left: 20%;
+    }
+    &__section{
+        display: flex;
+        align-items: center;
+        padding-top: 70%;
+    }
+    &__info{
+        text-align: center;
+        font-size: .80em;
+    }
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+}
