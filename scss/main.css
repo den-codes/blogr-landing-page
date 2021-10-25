@@ -20,6 +20,9 @@ body {
 /*mobile gradient colors --nav*/
 /*background gradient colors --body*/
 /*typography & font weights*/
+/*FLEX*/
+/*DEFAULT BUTTONS*/
+/*NAV PREFERENCES*/
 @media screen and (max-width: 1440px) {
   .home {
     display: -webkit-box;
@@ -37,27 +40,23 @@ body {
             flex-direction: column;
     max-width: 100%;
     height: 70vh;
-    background-image: url("/images/bg-pattern-intro.svg");
-    background-position: 80% 20%;
-    background-size: 50%;
-    background-repeat: no-repeat;
-    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 143, 112, 0.9)), to(rgba(255, 82, 93, 0.9)));
-    background: linear-gradient(to right, rgba(255, 143, 112, 0.9), rgba(255, 82, 93, 0.9));
+    background-size: 300%;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 143, 112, 0.9)), to(rgba(255, 82, 93, 0.85))), url("/images/bg-pattern-intro.svg") 45% 45% no-repeat;
+    background: linear-gradient(to right, rgba(255, 143, 112, 0.9), rgba(255, 82, 93, 0.85)), url("/images/bg-pattern-intro.svg") 45% 45% no-repeat;
     border-bottom-left-radius: 60px;
     position: relative;
   }
   .home__logo {
-    margin-left: 0%;
-    margin-right: 5%;
-    border: 1px solid red;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
   }
   nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -65,12 +64,17 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    max-width: 95%;
-    margin: -10% 25% 0 0%;
-    border: 1px solid red;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    margin-top: -5%;
+    width: 80%;
+    position: relative;
   }
   .dropdown {
-    position: relative;
+    -webkit-box-flex: 3;
+        -ms-flex-positive: 3;
+            flex-grow: 3;
   }
   .dropdown__wrapper {
     display: -webkit-box;
@@ -131,16 +135,15 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    display: none;
     position: absolute;
-    width: 90px;
-    height: 100px;
+    width: 150px;
+    height: 120px;
     background-color: white;
-    margin-top: 25%;
-    margin-left: -55%;
-    margin-right: 30%;
-    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-    border: 1px solid red;
+    margin: 15% 0 0 -840px;
+    -webkit-box-shadow: 0 5px 25px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 25px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
   }
   .dropdown__content2 {
     display: -webkit-box;
@@ -156,16 +159,15 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    display: none;
     position: absolute;
-    width: 90px;
-    height: 100px;
+    width: 150px;
+    height: 120px;
     background-color: white;
-    margin-top: 25%;
-    margin-left: 15%;
-    margin-right: 30%;
-    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-    border: 1px solid green;
+    margin: 15% 30% 0 23%;
+    -webkit-box-shadow: 0 5px 25px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 25px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
   }
   .dropdown__content3 {
     display: -webkit-box;
@@ -181,28 +183,42 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    display: none;
     position: absolute;
-    width: 90px;
-    height: 100px;
+    width: 150px;
+    height: 120px;
     background-color: white;
-    margin-top: 25%;
-    margin-left: 35%;
-    margin-right: 30%;
-    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-    border: 1px solid blue;
+    margin: 15% 30% 0 35%;
+    -webkit-box-shadow: 0 5px 25px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 25px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
   }
   .dropdown__content ul li {
     color: #2c2d3f;
+    margin-bottom: 15%;
     list-style: none;
+  }
+  .dropdown__content ul li:hover {
+    font-weight: 800;
+    color: #2c2d3f;
   }
   .dropdown__content2 ul li {
     color: #2c2d3f;
+    margin-bottom: 15%;
     list-style: none;
+  }
+  .dropdown__content2 ul li:hover {
+    font-weight: 800;
+    color: #2c2d3f;
   }
   .dropdown__content3 ul li {
     color: #2c2d3f;
+    margin-bottom: 15%;
     list-style: none;
+  }
+  .dropdown__content3 ul li:hover {
+    font-weight: 800;
+    color: #2c2d3f;
   }
   .signin {
     display: -webkit-box;
@@ -218,9 +234,12 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -ms-flex-preferred-size: 5;
-        flex-basis: 5;
-    text-align: center;
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
   }
   .signin__btn {
     background: transparent;
@@ -235,6 +254,10 @@ body {
   }
   .signin__btn:nth-child(1) {
     color: white;
+  }
+  .signin__btn:nth-child(1):hover {
+    background-color: white !important;
+    color: #ff7a85;
   }
   .signin__btn:nth-child(2) {
     background-color: white !important;
@@ -267,7 +290,7 @@ body {
     color: white;
   }
   h1 {
-    margin-top: 15%;
+    margin-top: 25%;
     margin-bottom: 3%;
     font-size: 2.5em;
   }
