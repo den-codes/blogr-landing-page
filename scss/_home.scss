@@ -14,6 +14,12 @@
         &__logo{
             flex-shrink: 1;
         }
+        &__hamburger{
+            display:none;
+        }
+        &__close{
+            display:none;
+        }
 }
 nav{
     @include navMenu(row);
@@ -23,10 +29,11 @@ nav{
     position: relative;
 }
 .dropdown{
-    flex-grow: 3;
-    &__wrapper{
     @include flexCenter(row);
-    margin: 0 3% 0 3%;
+    margin-left: -15%;
+    flex-grow: 5;
+    &__wrapper{
+    margin: 0 -2% 0 5%;
     }
         &__btn{
             @include flexCenter(row);
@@ -40,47 +47,47 @@ nav{
             cursor:pointer;
         }
         &__btn i{
-            margin-left: 7%;
+            margin: 20% 0 0 7%;
         }
-        &__btn:hover{
-            text-decoration: underline;
+        &__btn i:nth-child(2){
+            display:none
         }
             &__content{
                 @include flexCenter(column);
                 display: none;
                 position: absolute;
                 width: 150px;
-                height: 120px;
+                height: 135px;
                 background-color: $white;
-                margin: 15% 0 0 -840px;
                 box-shadow: 0 5px 25px 2px rgba(0, 0, 0, .2);
                 border-radius: 5px;
             }
             &__content2{
                 @include flexCenter(column);
-                display: none;
+                display:none;
                 position: absolute;
                 width: 150px;
-                height: 120px;
+                height: 135px;
                 background-color: $white;
-                margin: 15% 30% 0 23%;
                 box-shadow: 0 5px 25px 2px rgba(0, 0, 0, .2);
                 border-radius: 5px;
             }
             &__content3{
                 @include flexCenter(column);
-                display: none;
+                display:none;
                 position: absolute;
                 width: 150px;
-                height: 120px;
+                height: 135px;
                 background-color: $white;
-                margin: 15% 30% 0 35%;
                 box-shadow: 0 5px 25px 2px rgba(0, 0, 0, .2);
                 border-radius: 5px;
             }
+            #content:hover {
+                text-decoration: underline;    
+            }
             &__content ul li {
                 color: $dark-gray;
-                margin-bottom: 15%;
+                margin: 10% 0 15% 10%;
                 list-style: none;
             }
             &__content ul li:hover{
@@ -89,7 +96,7 @@ nav{
             }
             &__content2 ul li {
                 color: $dark-gray;
-                margin-bottom: 15%;
+                margin: 10% 0 15% 10%;
                 list-style: none;
             }
             &__content2 ul li:hover{
@@ -98,14 +105,23 @@ nav{
             }
             &__content3 ul li {
                 color: $dark-gray;
-                margin-bottom: 15%;
+                margin: 10% 0 15% 10%;
                 list-style: none;
             }
             &__content3 ul li:hover{
                 font-weight: 800;
                 color: $dark-gray;
             }
-}
+            #menu1:hover &__content{
+                display:block;
+            }
+            #menu2:hover &__content2{
+                display:block;
+            }
+            #menu3:hover &__content3{
+                display:block;
+            }
+        }
 .signin{
     @include flexCenter(row);
     flex-grow: 2;
@@ -147,9 +163,8 @@ hgroup{
     font-family: $primary-font;
     color: $white;
 }
-h1{
-    margin-top: 25%;
-    margin-bottom: 3%;
+hgroup h1{
+    margin:25% 0 3% 0;
     font-size: 2.5em;
 }
 .info{
@@ -186,3 +201,4 @@ h1{
         }
 }
 }
+@import 'variables', 'mixins', 'resets'

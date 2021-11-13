@@ -1,31 +1,102 @@
-@media screen and (max-width: 785px) {
+@media screen and (min-width: 375px) and (max-width: 785px) {
     .home{
         @include flexCenter(row);
         max-width: 100vw;
-        height: 70vh;
+        height: 80vh;
         position:relative;
-        background-image: url('/images/bg-pattern-intro.svg');
-        background-position: 80% 20%;
-        background-size: 50%;
-        background-repeat: no-repeat;
         background: linear-gradient(
-            to right, 
-            rgba($first-red, 0.9),
-            rgba($light-red, 0.9)
-        );
+        to right, 
+        rgba($first-red, 0.9),
+        rgba($light-red, .9)
+    ), url('/images/bg-pattern-intro.svg') 55% 50% no-repeat;
         border-bottom-left-radius: 60px;
         &__nav{
+            @include flexCenter(column);
             position: absolute;
             margin-bottom: 46%;
         }
     &__logo{
+        display: flex;
+        margin: -50% 0 10% -70%;
         position: absolute;
-        margin-left: -55%;
+        &__logo img{
+            width: 30%;
+        }
     }
-    
+    &__hamburger{
+        display:block;
+        position: absolute;
+        margin: -50% 0 10% 90%;
+        cursor:pointer;
+    }
+    &__close.active{
+        display:block;
+        position: absolute;
+        margin: -40% 0 10% 90%;
+        cursor:pointer; 
+       }
 }
 .dropdown{
-    display:none;
+    display:none; 
+    z-index: 999;
+    margin-top: 90vh;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: $white;
+    border-radius: 10px;
+    border: 1px solid red;
+
+    &__wrapper{
+    @include flexCenter(column);
+    border: 1px solid red;
+    gap: 150px;
+}
+        #{&}__btn{
+            @include flexCenter(row);
+            @include defaultBtns;
+            border: 1px solid red;
+            color: $dark-gray;
+            padding: 14px;
+            font-size: $font-size;
+            border: 20px; 
+            font-family: $Ubuntu;
+            font-weight: map-get($font-weights, "extra-bold" );
+            cursor:pointer;
+        }
+        &__btn:nth-last-child(1){
+            margin: 10% 0 0 7%;
+        }
+        &__btn:nth-last-child(2){
+            display:none;        }
+        &__content{
+            display:block;
+            margin-top: -60%;
+        }
+}
+.signin{
+    @include flexCenter(column);
+    gap: 10px;
+    &__btn{
+        @include defaultBtns;
+        border: 1px solid red;
+        width: 150px;
+        height: 45px;
+        margin-right: 3%;
+        font-weight: map-get($font-weights, "extra-bold");
+        }
+        &__btn:nth-child(1){
+            color: $dark-gray;
+            font-size: $font-size;
+            font-weight: map-get($font-weights, "extra-bold");
+        }
+        &__btn:nth-child(2){
+            background: linear-gradient(to right, 
+            rgba($first-red, 1),
+            rgba($light-red, 1));
+            color: $white;
+            font-size: $font-size;
+            font-weight: map-get($font-weights, "extra-bold");
+        }
 }
 hgroup{
     position: absolute;
@@ -36,46 +107,127 @@ hgroup{
     margin-right:10%;
 }
 hgroup h1{
-    font-size: 2em;
+    font-size: 2.1em;
+    font-weight: map-get($font-weights, "extra-bold");
 }
 hgroup h5{
-    font-weight: map-get($font-weights, "light" );
+    font-weight: map-get($font-weights, "light");
     font-size: 1em;
 }
 .info{
     @include flexCenter(row);
     position:absolute;
-    margin: 70% 5% 0 5%;
-    &__btn{
-        max-width: 100%;
-        height: 100%;
-        font-size: 1em;
+    margin: 90% 5% 0 5%;
+    width: 280px;
+    height: 13%;
+    gap: 3px;
+    #{&}__btn{
+        font-size: .85em;
+        font-weight: map-get($font-weights, "extra-bold");
+        width: 120px;
+        height: 40px;
+    }
+    &__btn:nth-child(2){
+    border: 1px solid $white;
     }
 }
 .main{
-    margin-top: 18%;
-    margin-bottom: 20%;
-    background-position: 150% 1%  !important; 
-    background-size: 90% !important;
-    height: 900px;
-
+    @include flexCenter(column);
+    max-width: 100vw;
+    background-position: 55% 15%  !important; 
+    background-size: 80% !important;
+    min-height: 165vh;
     &__title{
-        font-size: 1.5em;
-        margin-left: 20%;
+        border: 1px solid red;
+        position: absolute;
+        top: 2%;
+        font-size: .50em;
+        font-weight: map-get($font-weights, "extra-bold");
     }
     &__section{
-        display: flex;
         align-items: center;
-        padding-top: 70%;
+        justify-content:center;
+        top: 40%;
+        position: absolute;
+        max-width: 60%;
+        border: 1px solid blue;
     }
     &__info{
+        padding-left: 25%;
         text-align: center;
         font-size: .80em;
     }
+    &__info h2{
+        border: 1px solid red;
+         font-size: 1.8em;
+         text-align: center;
+         padding: 0 10% 0 10%;
+         font-weight: map-get($font-weights, "extra-bold");
+    }
+    &__info p{
+        border: 1px solid red;
+         font-size: 1em;
+         text-align: center;
+    } 
 }
+.section2{
+    @include flexCenter(column);
+    justify-content: space-between;
+    max-width: 100vw;
+    min-height: 95vh;
+    &__info{
+        min-width: 65%;
+        margin: 36% auto 10% auto;
+        border: 1px solid red;
+    }
+    &__info h1{
+        font-size: 1.8em !important;
+        margin-bottom: 0;
+    }
+    &__info h1, p{
+        margin: auto;
+        text-align: center;
+        border: 1px solid blue;
+    }
+    &__img{
+        width: 100vw;
+        position:absolute;
+        top: -40%;
+        left: -8%;
+    }
+}
+.main2{
+    @include flexCenter(row);
+    max-width: 100vw;
+    min-height: 120vh;
+    background-image: url('/images/illustration-laptop-desktop.svg');
+    background-position: 50% 5% !important; 
+    background-size: 100% !important;
+    position: relative;
+    border: 1px red solid;
+        &__section{
+        @include flexCenter(column);
+        justify-content: space-around;
+        position: absolute;
+        border: 1px solid blue;
+        top: 30%;
+    }
+        &__info{
+            max-width: 70%;
+            margin: 0;
+            height: 60%;
+            border: 1px solid green;
+        }
+        &__info h2{
+        margin: auto;
+        text-align: center;
+    }
+}
+
 .footer{
     display: flex;
     flex-direction: column;
     align-content: center;
 }
 }
+@import 'variables', 'mixins', 'resets';
